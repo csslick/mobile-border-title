@@ -1,67 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>모바일가변타이틀</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
+      width: 100%;
       max-width: 500px;
       margin: 0 auto;
     }
 
     #title {
+      /*  
+        vw 뷰포트 widht 100%
+        vh 뷰포트 height 100%;
+      */
       width: 100%;
       height: 100vh;
-      background: #abc;
+      background: #ccc;
       position: relative;
       padding: 45px;
-      writing-mode: vertical-lr;
+      /* 세로쓰기 모드 */
+      writing-mode: vertical-rl;
       color: #fff;
-    }
 
-    .border-bg {
+      /* 배경이미지 */
+      background-image: url(main-img.jpg);
+      background-size: cover;
+      background-position: center;
+    }
+    .border {
+      width: 100%;
+      height: 100%;
+      /* border: 2px solid #fff; */
+      /*  
+        svg의 경우 width,height 100%, preserveAspectRatio="none"로 수정
+      */
+      background-image: url(border.svg);
+      background-size: 100% 100%;
       position: relative;
-      width: 100%;
-      height: 100%;
     }
 
-    .border-bg .border {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .border-bg h1 {
+    .border h2 {
       position: absolute;
       right: 20px;
       bottom: 50px;
     }
 
-    .border-bg p {
+    .border p {
       position: absolute;
       left: 20px;
       top: 50px;
     }
-
   </style>
 </head>
+
 <body>
   <section id="title">
-    <div class="border-bg">
-      <img src="./border-inset.png" alt="" class="border">
-      <h1>우리결혼합니다</h1>
-      <p>김철수 &middot; 최민희</p>
+    <div class="border">
+      <h2>우리결혼합니다</h2>
+      <p>김철수&middot;최민희</p>     
     </div>
- 
+  </section>
+  <section id="invitation">
+    <h2>초대글</h2>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti ducimus sed, laudantium placeat dolorum suscipit mollitia facere nisi earum dolor possimus nam vel tenetur distinctio rem, reprehenderit dolorem deleniti. Facilis?</p>
   </section>
 </body>
+
 </html>
